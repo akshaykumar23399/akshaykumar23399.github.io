@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="About Vaibhav Kaushik" />
+    <meta name="author" content="Vaibhav Kaushik" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,500,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Modak&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Akshay - Akshay Kumar</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello.</h1>
+      <p style="font-weight: 500; font-size: 2.2em; display: inline-block;">
+        I am Akshay Kumar, simply&nbsp;<div class="text text-1">@</div><div class="text text-2">A</div><div class="text text-5">k</div><div class="text text-4">s</div><div class="text text-6">h</div><div class="text text-7">a</div><div class="text text-3">y</div>
+      </p>
+      <p>
+        👋 <br>
+
+        🙋🏻‍♂️  I'm currently studying Computer Science &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engineeringat UIET Rohtak in 🇮🇳 <br>
+        🌱 I’m currently learning Flutter, Python and JS. <br>
+        💬 Ask me about HTML, CSS, Java, Python, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaScript, Node.JS,MongoDB, Flutter, Dart. <br>
+        📫 How to reach me: <a href="mailto:akshaykumar23399@gmail.com">✉️Email</a>  &nbsp; <a href="https://github.com/akshaykumar23399" > 🔗Github </a> <br>
+        ⚡ Fun fact: I'm not real🤞🏻 <br>
+      </p>
+    </div>
+    <div class="toggle-dark">
+      <input type="checkbox" name="theme" id="switch" />
+      <label for="switch">Toggle</label>
+    </div>
+
+    <script>
+      const checkbox = document.querySelector('input[name=theme]');
+      const dark = localStorage.getItem('theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      checkbox.checked = dark;
+
+      checkbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          trans(true);
+        } else {
+          trans(false);
+        }
+      });
+
+      const trans = (dark) => {
+        document.documentElement.classList.add('transition');
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        window.setTimeout(() => {
+          document.documentElement.classList.remove('transition')
+        }, 750)
+      }
+    </script>
+  </body>
+</html>
